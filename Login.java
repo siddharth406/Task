@@ -29,32 +29,8 @@ public class Login extends HttpServlet {
 	 * @throws  
 	 * @see Servlet#init(ServletConfig)
 	 */
-	public void init(ServletRequest request, ServletResponse response) throws ServletException, IOException  {
+	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-	
-
-	response.setContentType("text/html");
-	PrintWriter pw = response.getWriter();
-	
-	request.getRequestDispatcher("Logout").include(request,response);
-	
-	pw.print("<html>"
-			+ "<head><title>Login</title>"
-            + "<style>"
-			+"body(font-family:arial;)"
-			+"</style>"
-			+"</head>"
-			+"<center>"
-            +"<h1>Login</h1>"
-			+"<form action='Check_User' method='post'>"
-            +"<input type='text' name='unmae'placeholder='Username' required>"
-			+"<input type='password' name='pass'placeholder='Password' required>"
-            +"<input type='submit' value='Go'>"
-			+"</form>"
-			+ "</center"
-			+"</body></html>"
-			
-			);
 	
 	
 	}
@@ -63,6 +39,30 @@ public class Login extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+		request.getRequestDispatcher("Logout").include(request,response);
+		
+		pw.print("<html>"
+				+ "<head><title>Login</title>"
+	            + "<style>"
+				+"body(font-family:arial;)"
+				+"</style>"
+				+"</head>"
+				+"<center>"
+	            +"<h1>Login</h1>"
+				+"<form action='Check_User' method='post'>"
+	            +"<input type='name' name='uname'placeholder='Username' required>"
+				+"<input type='password' name='pass'placeholder='Password' required>"
+	            +"<input type='submit' value='Go'>"
+				+"</form>"
+				+ "</center"
+				+"</body></html>"
+				
+				);
+		
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
